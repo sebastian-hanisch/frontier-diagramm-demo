@@ -1,7 +1,6 @@
 # Frontier und Diagramm – Lösungen zählen, ohne sie aufzuzählen – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-frontier-diagramm-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-frontier-diagramm-demo.streamlit.app/)**
 
 Stück 13 von 16 der Reihe **„Abzählen und erzeugende Funktionen“** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“ (die Linie wird erst vollständig veröffentlicht). Vorgänger sind `aufzaehlen-rekursion-demo` (Stück 1), `rationale-ef-demo` (Stück 2), `symbolische-methode-demo` (Stück 3), `semiring-rekursion-demo` (Stück 4), `multimengen-partitionen-demo` (Stück 5), `beschriftete-strukturen-demo` (Stück 6), `siebformel-demo` (Stück 7), `zaehlen-nach-parameter-demo` (Stück 8), `asymptotik-demo` (Stück 9), `gleichverteilt-ziehen-demo` (Stück 10), `burnside-polya-demo` (Stück 11) und `isomorphieausschluss-demo` (Stück 12); das letzte hat die **Symmetrie** in der Suche gebrochen. Diese Demo fasst stattdessen **gleiche Teilprobleme** zusammen: Die **Frontier-Methode** (Knuths Simpath) baut für die Kanten eines Gitters ein **Entscheidungsdiagramm** Kante für Kante, und zwei Teilauswahlen mit demselben **Zustand** an der Frontier (den Knoten, die noch Kanten bekommen können) laufen im selben Diagrammknoten weiter. Das Diagramm zählt die einfachen Wege, die perfekten Paarungen (Dominosteine) und die Spannbäume des Gitters, ohne eine einzige Lösung aufzuzählen; auf demselben Diagramm läuft das Semiring aus Stück 4 (Zahl, kleinstes Gewicht, Zahl der kürzesten, größtes Gewicht) und das gleichverteilte Ziehen aus Stück 10.
 
@@ -122,4 +121,4 @@ Gebaut mit Streamlit, Plotly und fpdf2.
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Abzählen: von der Rekursion zur Verfahrenswahl](https://sebastianhanisch.net/konzepte-abzaehlen.html).
