@@ -240,12 +240,12 @@ st.markdown(
     f"""
 | Annahme | Was passiert, wenn sie verletzt ist | Wer setzt an |
 |---|---|---|
-| **Die Frontier bleibt schmal** | Das Diagramm ist exponentiell in der Frontier: Wege im n×n-Gitter {big_text(1268340)} Knoten bei n = 11, bei n = 20 wären es Milliarden. Gitter mit breiter Frontier (große Zusammenhangszahl) sind nicht mehr lösbar. | Experiment 1 |
+| **Die Frontier bleibt schmal** | Das Diagramm ist exponentiell in der Frontier: Wege im n×n-Gitter {big_text(1268340)} Knoten bei n = 11, bei n = 20 wären es hochgerechnet (Faktor 3,3 je Seitenlänge) grob einige zehn Milliarden. Gitter mit breiter Frontier (große Zusammenhangszahl) sind nicht mehr lösbar. | Experiment 1 |
 | **Die Kantenordnung ist gut** | Dieselben Lösungen, aber in schlechter Ordnung riesig (Experiment 3); die beste Ordnung zu finden ist selbst schwer, die App kennt nur Zeile und Spalte. | Experiment 3 |
 | **Der Zustand ist vollständig** | Der Zustand muss alles enthalten, was für die Fortsetzung zählt; ein vergessener Fall (zum Beispiel ein zweiter Teilweg neben dem fertigen) macht falsche Zahlen. Die Prüfwege zeigen es. | Experiment 2 |
 | **Gewichte positiv** | Dijkstra und die Zählung der kürzesten Wege setzen positive Gewichte voraus; die App nimmt 1 bis 9. Mit negativen Gewichten sind kürzeste Wege nicht einfach. | – |
 | **Die obere Schranke ist gut** | Die einfache obere Schranke (abgeschnittene Zustände plus alle restlichen positiven Gewichte) ist schwach; echte relaxierte Diagramme führen ähnliche Zustände zusammen und sind stärker (hier nicht gebaut). | Experiment 5 |
-| **Es gibt eine Gitterstruktur** | Gebaut ist nur das Gitter; allgemeine Graphen brauchen eine Kantenordnung und haben eine andere Frontier. Der längste einfache Weg bleibt NP-schwer, das Diagramm ist exponentiell in n. | – |
+| **Es gibt eine Gitterstruktur** | Gebaut ist nur das Gitter; allgemeine Graphen brauchen eine Kantenordnung und haben eine andere Frontier. Der längste einfache Weg ist für allgemeine Graphen NP-schwer (Literaturwissen, hier nicht gezeigt); das Diagramm wächst im Gitter exponentiell in n (gemessen). | – |
 | **Die Größe ist begrenzt** | Wege bis {C.SIDE_CAP['Einfache Wege']}×{C.SIDE_CAP['Einfache Wege']}, Paarungen bis {C.SIDE_CAP['Perfekte Paarungen']}×{C.SIDE_CAP['Perfekte Paarungen']}, Spannbäume bis {C.SIDE_CAP['Spannbäume']}×{C.SIDE_CAP['Spannbäume']}; die schlechte Ordnung nur bis {C.BAD_ORDER_EDGE_LIMIT} Kanten. | – |
 """
 )

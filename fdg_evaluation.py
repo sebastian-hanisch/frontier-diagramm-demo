@@ -217,8 +217,8 @@ def verdict_size(res: dict):
     m8 = next(r for r in res["matchings"] if r["Gitter"] == "8×8")
     t7 = res["trees"][-1]
     return "success", (f"Das Diagramm ist weit kleiner als die Lösungszahl: Wege im {last['Gitter']}-Gitter {big_text(last['Lösungen'])} in {big_text(last['Knoten'])} Knoten, Dominosteine auf dem 8×8-Brett {big_text(m8['Lösungen'])} in {big_text(m8['Knoten'])}, "
-                       f"Spannbäume des {t7['Gitter']}-Gitters {big_text(t7['Lösungen'])} in {big_text(t7['Knoten'])} Knoten. Die Knotenzahl wächst bei den Wegen um das {de(min(ratios), 1)}- bis {de(max(ratios), 1)}-Fache je Seitenlänge "
-                       f"(exponentiell in n), die Lösungszahl wie exp(c·n²); ab n = 4 gewinnt das Diagramm, bei n = 8 kommen {sci_text(p[6]['Lösungen'] / p[6]['Knoten'], 2)} Wege auf einen Knoten.")
+                       f"Spannbäume des {t7['Gitter']}-Gitters {big_text(t7['Lösungen'])} in {big_text(t7['Knoten'])} Knoten. Die Knotenzahl wächst bei den Wegen je Seitenlänge um einen Faktor, der von {de(ratios[0], 1)} auf {de(ratios[-1], 1)} fällt "
+                       f"(exponentiell in n), die Lösungszahl passt zu exp(c·n²); ab n = 4 hat das reduzierte Diagramm weniger Knoten als Wege ({big_text(p[2]['Knoten'])} gegen {big_text(p[2]['Lösungen'])}), bei n = 8 kommen {sci_text(p[6]['Lösungen'] / p[6]['Knoten'], 2)} Wege auf einen Knoten.")
 
 
 # ----------------------------------------------------------------------------- Experiment 2: dieselben Zahlen auf anderen Wegen
@@ -337,7 +337,7 @@ def verdict_beam(rows: list):
     first_opt = next(r["Breite"] for r in last["Reihe"] if r["untere"] == last["exakt"])
     closing = next((r["Breite"] for r in last["Reihe"] if r["obere"] == last["exakt"]), None)
     ok = all(r["untere"] <= row["exakt"] <= r["obere"] for row in rows for r in row["Reihe"] if r["untere"] is not None)
-    return ("success" if ok else "error"), (f"Mit begrenzter Breite entstehen Schranken für den längsten Weg (n = {last['n']}, exakt {last['exakt']}, größte Schicht {last['größte Schicht']}): die untere Schranke ist schon bei Breite {first_opt} das Optimum, "
+    return ("success" if ok else "error"), (f"Mit begrenzter Breite entstehen Schranken für den längsten Weg (n = {last['n']}, exakt {last['exakt']}, größte Schicht {last['größte Schicht']}): die untere Schranke ist bei diesen Gewichten schon bei Breite {first_opt} das Optimum, "
                                             f"die einfache obere Schranke (abgeschnittene Zustände mit allen restlichen positiven Gewichten) schließt erst bei Breite {closing} und ist davor weit entfernt; echte relaxierte Diagramme, die ähnliche Zustände zusammenführen, wären stärker (hier nicht gebaut).")
 
 

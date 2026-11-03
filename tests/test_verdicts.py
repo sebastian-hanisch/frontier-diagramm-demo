@@ -61,7 +61,7 @@ def test_ways_table_of_the_standard_case_and_the_seed_case():
 def test_size_verdict_exact():
     assert ev.verdict_size(ev.size_rows()) == ("success",
         "Das Diagramm ist weit kleiner als die Lösungszahl: Wege im 10×10-Gitter 4,10·10¹⁹ (20 Stellen) in 377.106 Knoten, Dominosteine auf dem 8×8-Brett 12.988.816 in 2.298, Spannbäume des 7×7-Gitters 1,98·10¹⁹ (20 Stellen) in 23.788 Knoten. "
-        "Die Knotenzahl wächst bei den Wegen um das 3,4- bis 4,4-Fache je Seitenlänge (exponentiell in n), die Lösungszahl wie exp(c·n²); ab n = 4 gewinnt das Diagramm, bei n = 8 kommen 2,5·10⁷ Wege auf einen Knoten.")
+        "Die Knotenzahl wächst bei den Wegen je Seitenlänge um einen Faktor, der von 4,4 auf 3,4 fällt (exponentiell in n), die Lösungszahl passt zu exp(c·n²); ab n = 4 hat das reduzierte Diagramm weniger Knoten als Wege (134 gegen 184), bei n = 8 kommen 2,5·10⁷ Wege auf einen Knoten.")
 
 
 def test_check_verdict_exact():
@@ -86,7 +86,7 @@ def test_semiring_verdict_exact():
 
 def test_beam_verdict_exact():
     assert ev.verdict_beam(ev.beam_rows()) == ("success",
-        "Mit begrenzter Breite entstehen Schranken für den längsten Weg (n = 7, exakt 263, größte Schicht 348): die untere Schranke ist schon bei Breite 64 das Optimum, "
+        "Mit begrenzter Breite entstehen Schranken für den längsten Weg (n = 7, exakt 263, größte Schicht 348): die untere Schranke ist bei diesen Gewichten schon bei Breite 64 das Optimum, "
         "die einfache obere Schranke (abgeschnittene Zustände mit allen restlichen positiven Gewichten) schließt erst bei Breite 512 und ist davor weit entfernt; echte relaxierte Diagramme, die ähnliche Zustände zusammenführen, wären stärker (hier nicht gebaut).")
 
 
